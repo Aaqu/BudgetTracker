@@ -1,0 +1,4 @@
+AUTH_SECRET="" # to add use `npx auth secret`
+MONGODB_URI="mongodb://mongoadmin:example@localhost:27017/"
+AUTH_URL=http://localhost:3000
+NODE_ENV=development
