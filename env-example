@@ -1,0 +1,4 @@
+AUTH_SECRET="" # Added by `npx auth`. Read more: https://cli.authjs.dev
+MONGODB_URI="mongodb://mongoadmin:example@localhost:27017/"
+AUTH_URL=http://localhost:3000
+NODE_ENV=development

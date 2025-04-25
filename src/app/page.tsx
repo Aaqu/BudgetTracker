@@ -1,5 +1,9 @@
+import {SignIn} from "@/components/SignIn";
+
 export default function Home() {
   return (
-    <div>pwa-app</div>
+    <div>
+      <SignIn/>
+    </div>
   );
 }
