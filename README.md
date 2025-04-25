@@ -20,24 +20,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```
-version: '3.8'
+To run mongo for dev use
 
-services:
-  mongo:
-    image: mongo:latest
-    container_name: budget-mongo-dev
-    restart: always
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=example
-    volumes:
-      - mongo-data-dev:/data/db
-    ports:
-      - "27017:27017"
-  volumes:
-    mongo-data-dev:
-```
+`docker:compose:mongo-dev:start`
+
+To stop mongo 
+
+`docker:compose:mongo-dev:stop`
+
+Open [http://localhost:8081](http://localhost:8081) for mongo express
 
 ## Learn More
 
@@ -54,7 +45,7 @@ You can find docker commands in `package.json`.
 
 To export docker image create folder `build`!
 
-docker compose
+docker compose for prod
 ```
 version: '3.8'
 

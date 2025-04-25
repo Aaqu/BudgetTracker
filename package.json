@@ -10,7 +10,9 @@
     "docker:build": "docker build -t budget-tracker .",
     "docker:run": "docker run -p 3000:3000 --rm budget-tracker",
     "docker:setup": "pnpm docker:build && pnpm docker:run",
-    "docker:export": "docker save -o build/budget-tracker.tar budget-tracker"
+    "docker:export": "docker save -o build/budget-tracker.tar budget-tracker",
+    "docker:compose:mongo-dev:start": "docker compose -f docker/mongo-docker-compose.yml up -d && echo Mongo Express on http://localhost:8081",
+    "docker:compose:mongo-dev:stop": "docker compose -f docker/mongo-docker-compose.yml stop && echo Mongo Express stopped"
   },
   "dependencies": {
     "next": "15.3.1",
