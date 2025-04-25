@@ -20,9 +20,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run mongo for dev use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`pnpm docker:compose:mongo-dev:start`
+
+To stop mongo 
+
+`pnpm docker:compose:mongo-dev:stop`
+
+Open [http://localhost:8081](http://localhost:8081) for mongo express
 
 ## Learn More
 
@@ -33,6 +39,45 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy 
+## Deploy
 
-more soon
+You can find docker commands in `package.json`.
+
+To export docker image create folder `build`!
+
+docker compose for prod
+```
+version: '3.8'
+
+services:
+  app:
+    image: range-of-motion/budget:latest
+    container_name: budget-app
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=mongo
+      - DB_PORT=27017
+      - DB_DATABASE=budget
+      - DB_USERNAME=mongoadmin
+      - DB_PASSWORD=example
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: budget-mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=example
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo-data:
+```
+
