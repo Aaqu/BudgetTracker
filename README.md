@@ -9,24 +9,22 @@ This is a PWA-APP on [Next.js](https://nextjs.org)
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 To run mongo for dev use
 
-`pnpm docker:compose:mongo-dev:start`
+```bash
+pnpm docker:compose:mongo-dev:start
+```
 
 To stop mongo 
 
-`pnpm docker:compose:mongo-dev:stop`
+```bash
+pnpm docker:compose:mongo-dev:stop
+```
 
 Open [http://localhost:8081](http://localhost:8081) for mongo express
 
@@ -46,6 +44,7 @@ You can find docker commands in `package.json`.
 To export docker image create folder `build`!
 
 docker compose for prod
+
 ```
 version: '3.8'
 
