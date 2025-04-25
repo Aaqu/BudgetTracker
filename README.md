@@ -22,11 +22,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 To run mongo for dev use
 
-`docker:compose:mongo-dev:start`
+`pnpm docker:compose:mongo-dev:start`
 
 To stop mongo 
 
-`docker:compose:mongo-dev:stop`
+`pnpm docker:compose:mongo-dev:stop`
 
 Open [http://localhost:8081](http://localhost:8081) for mongo express
 
