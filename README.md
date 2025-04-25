@@ -1,4 +1,8 @@
-# This is a PWA-APP on [Next.js](https://nextjs.org) 
+# BudgetTracker
+
+<img src="public/icon.png" alt="Ikona aplikacji" width="256" height="256">
+
+This is a PWA-APP on [Next.js](https://nextjs.org)
 
 ## Getting Started
 
